@@ -31,3 +31,22 @@ function agregarAmigo() {
     const resultado = document.getElementById('resultado');
     resultado.innerHTML = '';
 }
+
+
+// Sorteo
+function sortearAmigo() {
+    const resultado = document.getElementById('resultado');
+
+    if (amigos.length === 0) {
+        alert('Debes agregar al menos un amigo para hacer el sorteo');
+        return;
+    }
+    const numAle = Math.floor(Math.random() * amigos.length);
+    const amigoSorteado = amigos[numAle];
+
+    resultado.innerHTML = `
+        <li class="winner-item">
+            🎉 El amigo secreto sorteado es: <strong>${amigoSorteado}</strong>
+        </li>
+    `;
+}
